@@ -26,9 +26,15 @@ security_scheme = HTTPBearer()
 app = FastAPI()
 
 # Permitir solicitudes desde frontend
+origins = [
+    "http://localhost:3000",  # si usas el puerto 3000
+    "http://localhost:3001",  # tu frontend actual
+    "https://chatgpt-clon-frontend.onrender.com",  # si lo subes a producción también
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # o ["*"] para pruebas
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
