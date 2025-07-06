@@ -49,7 +49,7 @@ Base.metadata.create_all(bind=engine)
 
 @app.get("/")
 def root(db: Session = Depends(get_db)):
-    return {"message": "Conexión a base de datos exitosa"}
+    return {"message": "API correcta"}
 
 
 @app.post("/register")
