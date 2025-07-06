@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: chatgpt-clon-backend
+    runtime: python
+    buildCommand: ""
+    startCommand: ./start.sh
+    envVars:
+      - key: DATABASE_URL
+        value: postgresql://base_de_datos_x2xi_user:rrmo9okqcug5aZpgTJ914gAbaO67miOJ@dpg-d1lcudje5dus73fiiif0-a.oregon-postgres.render.com/base_de_datos_x2xi
+      - key: SECRET_KEY
+        value: unvalorultrasecreto
+      - key: ALGORITHM
+        value: HS256
+      - key: ACCESS_TOKEN_EXPIRE_MINUTES
+        value: "30"
+    plan: free
